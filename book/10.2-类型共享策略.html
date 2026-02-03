@@ -1,0 +1,701 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <title>10.2 类型共享策略 · TypeScript 进化论</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.1.6">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="11.1-构建工具链.html" />
+    
+    
+    <link rel="prev" href="10.1-Monorepo管理.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第一部分：重塑认知 —— 从 ES5 到 Modern TypeScript</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="1.1-解释器与编译器.html">
+            
+                <a href="1.1-解释器与编译器.html">
+            
+                    
+                    1.1 解释器与编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="1.2-变量与作用域的修正.html">
+            
+                <a href="1.2-变量与作用域的修正.html">
+            
+                    
+                    1.2 变量与作用域的修正
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="1.3-现代函数设计.html">
+            
+                <a href="1.3-现代函数设计.html">
+            
+                    
+                    1.3 现代函数设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="2.1-结构化类型.html">
+            
+                <a href="2.1-结构化类型.html">
+            
+                    
+                    2.1 结构化类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="2.2-联合类型与交叉类型.html">
+            
+                <a href="2.2-联合类型与交叉类型.html">
+            
+                    
+                    2.2 联合类型与交叉类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="2.3-字面量类型与枚举.html">
+            
+                <a href="2.3-字面量类型与枚举.html">
+            
+                    
+                    2.3 字面量类型与枚举
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="3.1-从Callback到Promise.html">
+            
+                <a href="3.1-从Callback到Promise.html">
+            
+                    
+                    3.1 从 Callback 到 Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="3.2-Async_Await深度解析.html">
+            
+                <a href="3.2-Async_Await深度解析.html">
+            
+                    
+                    3.2 Async/Await 深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第二部分：类型体操 —— 掌握 TS 的核心魔法</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="4.1-泛型基础.html">
+            
+                <a href="4.1-泛型基础.html">
+            
+                    
+                    4.1 泛型基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="4.2-泛型约束.html">
+            
+                <a href="4.2-泛型约束.html">
+            
+                    
+                    4.2 泛型约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="5.1-映射类型.html">
+            
+                <a href="5.1-映射类型.html">
+            
+                    
+                    5.1 映射类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="5.2-条件类型.html">
+            
+                <a href="5.2-条件类型.html">
+            
+                    
+                    5.2 条件类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="5.3-infer关键字.html">
+            
+                <a href="5.3-infer关键字.html">
+            
+                    
+                    5.3 infer 关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第三部分：后端开发实战 (Node.js/NestJS)</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="6.1-Node.js_vs_Deno_vs_Bun.html">
+            
+                <a href="6.1-Node.js_vs_Deno_vs_Bun.html">
+            
+                    
+                    6.1 Node.js vs Deno vs Bun
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="6.2-模块系统：ESM_vs_CJS.html">
+            
+                <a href="6.2-模块系统：ESM_vs_CJS.html">
+            
+                    
+                    6.2 模块系统：ESM vs CJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="7.1-依赖注入.html">
+            
+                <a href="7.1-依赖注入.html">
+            
+                    
+                    7.1 依赖注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="7.2-DTO与数据验证.html">
+            
+                <a href="7.2-DTO与数据验证.html">
+            
+                    
+                    7.2 DTO 与数据验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="7.3-ORM选型.html">
+            
+                <a href="7.3-ORM选型.html">
+            
+                    
+                    7.3 ORM 选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第四部分：前端开发实战 (React + Next.js)</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="8.1-JSX本质.html">
+            
+                <a href="8.1-JSX本质.html">
+            
+                    
+                    8.1 JSX 本质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="8.2-Hooks革命.html">
+            
+                <a href="8.2-Hooks革命.html">
+            
+                    
+                    8.2 Hooks 革命
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="9.1-服务端渲染与静态生成.html">
+            
+                <a href="9.1-服务端渲染与静态生成.html">
+            
+                    
+                    9.1 服务端渲染与静态生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="9.2-Server_Actions.html">
+            
+                <a href="9.2-Server_Actions.html">
+            
+                    
+                    9.2 Server Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第五部分：架构与工程化</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="10.1-Monorepo管理.html">
+            
+                <a href="10.1-Monorepo管理.html">
+            
+                    
+                    10.1 Monorepo 管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.2" data-path="10.2-类型共享策略.html">
+            
+                <a href="10.2-类型共享策略.html">
+            
+                    
+                    10.2 类型共享策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="11.1-构建工具链.html">
+            
+                <a href="11.1-构建工具链.html">
+            
+                    
+                    11.1 构建工具链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="11.2-单元测试.html">
+            
+                <a href="11.2-单元测试.html">
+            
+                    
+                    11.2 单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">附录</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="附录-速查表.html">
+            
+                <a href="附录-速查表.html">
+            
+                    
+                    速查表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            本书使用 HonKit 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >10.2 类型共享策略</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="102-类型共享策略：全栈开发的圣杯">10.2 类型共享策略：全栈开发的圣杯</h1>
+<p>TS 全栈开发最核心的优势就是：<strong>Single Source of Truth (单一真实信源)</strong>。</p>
+<h2 id="1-传统的痛点">1. 传统的痛点</h2>
+<ol>
+<li>后端修改了 DB 字段 <code>name</code> -&gt; <code>fullname</code>。</li>
+<li>后端 API 变了。</li>
+<li>前端不知道，继续用 <code>name</code>。</li>
+<li>上线，前端报错，用户投诉。</li>
+</ol>
+<h2 id="2-共享类型的实现">2. 共享类型的实现</h2>
+<p>在 Monorepo 中，我们可以创建一个 <code>packages/shared-types</code> 包。</p>
+<p><strong>packages/shared-types/index.ts:</strong></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">User</span> {
+    <span class="hljs-attr">id</span>: <span class="hljs-built_in">number</span>;
+    <span class="hljs-attr">fullname</span>: <span class="hljs-built_in">string</span>; <span class="hljs-comment">// 后端修改了这里</span>
+    <span class="hljs-attr">role</span>: <span class="hljs-string">'admin'</span> | <span class="hljs-string">'user'</span>;
+}
+</code></pre>
+<p><strong>apps/api (Backend):</strong></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">User</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'@repo/shared-types'</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">getUser</span>(<span class="hljs-params"></span>): <span class="hljs-title class_">User</span> {
+    <span class="hljs-keyword">return</span> { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">fullname</span>: <span class="hljs-string">"Alice"</span>, <span class="hljs-attr">role</span>: <span class="hljs-string">"admin"</span> }; <span class="hljs-comment">// ✅ 必须匹配接口</span>
+}
+</code></pre>
+<p><strong>apps/web (Frontend):</strong></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">User</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'@repo/shared-types'</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">UserProfile</span>(<span class="hljs-params">{ user }: { user: User }</span>) {
+    <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{user.name}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>; 
+    <span class="hljs-comment">// ❌ Error: Property 'name' does not exist on type 'User'. Did you mean 'fullname'?</span>
+}
+</code></pre>
+<h2 id="3-效果">3. 效果</h2>
+<p>当你修改了共享包里的类型定义：</p>
+<ol>
+<li>编辑器（VS Code）会立即变红，指出所有受影响的前端和后端代码。</li>
+<li><code>tsc</code> 编译会失败，阻止你上线。</li>
+</ol>
+<p>这就是 <strong>Refactoring Confidence (重构信心)</strong>。这是 Python/Go 前后端分离模式（通过 Swagger/JSON 同步）很难达到的境界。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="10.1-Monorepo管理.html" class="navigation navigation-prev " aria-label="Previous page: 10.1 Monorepo 管理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="11.1-构建工具链.html" class="navigation navigation-next " aria-label="Next page: 11.1 构建工具链">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"10.2 类型共享策略","level":"6.2","depth":1,"next":{"title":"11.1 构建工具链","level":"6.3","depth":1,"path":"book/11.1-构建工具链.md","ref":"book/11.1-构建工具链.md","articles":[]},"previous":{"title":"10.1 Monorepo 管理","level":"6.1","depth":1,"path":"book/10.1-Monorepo管理.md","ref":"book/10.1-Monorepo管理.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TypeScript 进化论","language":"zh-hans","gitbook":"*"},"file":{"path":"book/10.2-类型共享策略.md","mtime":"2026-02-03T19:31:50.401Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-02-03T19:31:55.078Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

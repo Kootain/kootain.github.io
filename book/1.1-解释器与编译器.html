@@ -1,0 +1,714 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <title>1.1 解释器与编译器 · TypeScript 进化论</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.1.6">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.2-变量与作用域的修正.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第一部分：重塑认知 —— 从 ES5 到 Modern TypeScript</li>
+        
+        
+    
+        <li class="chapter active" data-level="2.1" data-path="1.1-解释器与编译器.html">
+            
+                <a href="1.1-解释器与编译器.html">
+            
+                    
+                    1.1 解释器与编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="1.2-变量与作用域的修正.html">
+            
+                <a href="1.2-变量与作用域的修正.html">
+            
+                    
+                    1.2 变量与作用域的修正
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="1.3-现代函数设计.html">
+            
+                <a href="1.3-现代函数设计.html">
+            
+                    
+                    1.3 现代函数设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="2.1-结构化类型.html">
+            
+                <a href="2.1-结构化类型.html">
+            
+                    
+                    2.1 结构化类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="2.2-联合类型与交叉类型.html">
+            
+                <a href="2.2-联合类型与交叉类型.html">
+            
+                    
+                    2.2 联合类型与交叉类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="2.3-字面量类型与枚举.html">
+            
+                <a href="2.3-字面量类型与枚举.html">
+            
+                    
+                    2.3 字面量类型与枚举
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="3.1-从Callback到Promise.html">
+            
+                <a href="3.1-从Callback到Promise.html">
+            
+                    
+                    3.1 从 Callback 到 Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="3.2-Async_Await深度解析.html">
+            
+                <a href="3.2-Async_Await深度解析.html">
+            
+                    
+                    3.2 Async/Await 深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第二部分：类型体操 —— 掌握 TS 的核心魔法</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="4.1-泛型基础.html">
+            
+                <a href="4.1-泛型基础.html">
+            
+                    
+                    4.1 泛型基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="4.2-泛型约束.html">
+            
+                <a href="4.2-泛型约束.html">
+            
+                    
+                    4.2 泛型约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="5.1-映射类型.html">
+            
+                <a href="5.1-映射类型.html">
+            
+                    
+                    5.1 映射类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="5.2-条件类型.html">
+            
+                <a href="5.2-条件类型.html">
+            
+                    
+                    5.2 条件类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="5.3-infer关键字.html">
+            
+                <a href="5.3-infer关键字.html">
+            
+                    
+                    5.3 infer 关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第三部分：后端开发实战 (Node.js/NestJS)</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="6.1-Node.js_vs_Deno_vs_Bun.html">
+            
+                <a href="6.1-Node.js_vs_Deno_vs_Bun.html">
+            
+                    
+                    6.1 Node.js vs Deno vs Bun
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="6.2-模块系统：ESM_vs_CJS.html">
+            
+                <a href="6.2-模块系统：ESM_vs_CJS.html">
+            
+                    
+                    6.2 模块系统：ESM vs CJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="7.1-依赖注入.html">
+            
+                <a href="7.1-依赖注入.html">
+            
+                    
+                    7.1 依赖注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="7.2-DTO与数据验证.html">
+            
+                <a href="7.2-DTO与数据验证.html">
+            
+                    
+                    7.2 DTO 与数据验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="7.3-ORM选型.html">
+            
+                <a href="7.3-ORM选型.html">
+            
+                    
+                    7.3 ORM 选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第四部分：前端开发实战 (React + Next.js)</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="8.1-JSX本质.html">
+            
+                <a href="8.1-JSX本质.html">
+            
+                    
+                    8.1 JSX 本质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="8.2-Hooks革命.html">
+            
+                <a href="8.2-Hooks革命.html">
+            
+                    
+                    8.2 Hooks 革命
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="9.1-服务端渲染与静态生成.html">
+            
+                <a href="9.1-服务端渲染与静态生成.html">
+            
+                    
+                    9.1 服务端渲染与静态生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="9.2-Server_Actions.html">
+            
+                <a href="9.2-Server_Actions.html">
+            
+                    
+                    9.2 Server Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第五部分：架构与工程化</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="10.1-Monorepo管理.html">
+            
+                <a href="10.1-Monorepo管理.html">
+            
+                    
+                    10.1 Monorepo 管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="10.2-类型共享策略.html">
+            
+                <a href="10.2-类型共享策略.html">
+            
+                    
+                    10.2 类型共享策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="11.1-构建工具链.html">
+            
+                <a href="11.1-构建工具链.html">
+            
+                    
+                    11.1 构建工具链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="11.2-单元测试.html">
+            
+                <a href="11.2-单元测试.html">
+            
+                    
+                    11.2 单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">附录</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="附录-速查表.html">
+            
+                <a href="附录-速查表.html">
+            
+                    
+                    速查表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            本书使用 HonKit 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1.1 解释器与编译器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="11-解释器与编译器：运行时环境的变迁">1.1 解释器与编译器：运行时环境的变迁</h1>
+<p>对于习惯了 Golang 编译成二进制文件或 Python 解释执行的后端开发者来说，TypeScript (TS) 的运行机制可能显得有些“不伦不类”。本节将带你厘清 TS 代码是如何跑起来的。</p>
+<h2 id="1-核心概念映射">1. 核心概念映射</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">概念</th>
+<th style="text-align:left">TypeScript</th>
+<th style="text-align:left">Golang</th>
+<th style="text-align:left">Python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>编译产物</strong></td>
+<td style="text-align:left">JavaScript 源码 (<code>.js</code>)</td>
+<td style="text-align:left">二进制机器码</td>
+<td style="text-align:left">字节码 (<code>.pyc</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>运行方式</strong></td>
+<td style="text-align:left">解释执行 (V8 Engine)</td>
+<td style="text-align:left">直接执行</td>
+<td style="text-align:left">解释执行 (Python VM)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>类型检查时机</strong></td>
+<td style="text-align:left">编译时 (Transpilation)</td>
+<td style="text-align:left">编译时 (Compilation)</td>
+<td style="text-align:left">运行时 (Type Hints 仅供参考)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-编译-vs-转译-compilation-vs-transpilation">2. 编译 vs 转译 (Compilation vs Transpilation)</h2>
+<p>在 Go 中，<code>go build</code> 会将源代码直接编译成机器码，脱离 Go 环境也能运行。
+但在 TypeScript 中，<code>tsc</code> (TypeScript Compiler) 实际上是一个 <strong>Transpiler (转译器)</strong>。</p>
+<ul>
+<li><strong>Go</strong>: <code>Source Code</code> -&gt; <code>Machine Code</code> (不可读)</li>
+<li><strong>TS</strong>: <code>TS Code</code> -&gt; <code>JS Code</code> (人类可读)</li>
+</ul>
+<p>这意味着：<strong>TypeScript 不会在运行时存在。</strong> 浏览器或 Node.js 真正执行的是被“擦除”了类型信息的 JavaScript 代码。</p>
+<h3 id="思维映射-为什么这很重要？">[思维映射] 为什么这很重要？</h3>
+<ul>
+<li><strong>Go 开发者注意</strong>：在 TS 中，你无法在运行时检查一个变量是不是 <code>Interface A</code>。因为 <code>Interface A</code> 在编译成 JS 后就消失了。这与 Go 的 <code>reflect</code> 包完全不同。</li>
+<li><strong>Python 开发者注意</strong>：虽然 TS 像 Python 一样解释执行，但 TS 的类型检查是强制的（在编译阶段）。</li>
+</ul>
+<h2 id="3-v8-引擎：你的新虚拟机">3. V8 引擎：你的新“虚拟机”</h2>
+<p>Node.js 基于 Chrome V8 引擎。你可以把 V8 想象成一个极致优化的 Python 解释器 + JIT (Just-In-Time) 编译器。</p>
+<ul>
+<li><strong>单线程模型</strong>：与 Python 的 GIL 类似，JS 也是单线程的。但它的异步模型（Event Loop）非常强大，将在第 3 章详细对比。</li>
+</ul>
+<h2 id="4-总结">4. 总结</h2>
+<p>当你运行 <code>npm run build</code> 时，你实际上是在做类似 <code>go generate</code> 的工作——生成最终交付的代码（JS）。理解这一点，是掌握 TS 类型系统的第一步：<strong>类型是给编译器看的，运行时只有值的流动。</strong></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.2-变量与作用域的修正.html" class="navigation navigation-next " aria-label="Next page: 1.2 变量与作用域的修正">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.1 解释器与编译器","level":"2.1","depth":1,"next":{"title":"1.2 变量与作用域的修正","level":"2.2","depth":1,"path":"book/1.2-变量与作用域的修正.md","ref":"book/1.2-变量与作用域的修正.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TypeScript 进化论","language":"zh-hans","gitbook":"*"},"file":{"path":"book/1.1-解释器与编译器.md","mtime":"2026-02-03T19:31:50.401Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-02-03T19:31:55.078Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

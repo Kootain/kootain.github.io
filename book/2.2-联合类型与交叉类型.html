@@ -1,0 +1,733 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <title>2.2 联合类型与交叉类型 · TypeScript 进化论</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.1.6">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2.3-字面量类型与枚举.html" />
+    
+    
+    <link rel="prev" href="2.1-结构化类型.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第一部分：重塑认知 —— 从 ES5 到 Modern TypeScript</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="1.1-解释器与编译器.html">
+            
+                <a href="1.1-解释器与编译器.html">
+            
+                    
+                    1.1 解释器与编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="1.2-变量与作用域的修正.html">
+            
+                <a href="1.2-变量与作用域的修正.html">
+            
+                    
+                    1.2 变量与作用域的修正
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="1.3-现代函数设计.html">
+            
+                <a href="1.3-现代函数设计.html">
+            
+                    
+                    1.3 现代函数设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="2.1-结构化类型.html">
+            
+                <a href="2.1-结构化类型.html">
+            
+                    
+                    2.1 结构化类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="2.2-联合类型与交叉类型.html">
+            
+                <a href="2.2-联合类型与交叉类型.html">
+            
+                    
+                    2.2 联合类型与交叉类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="2.3-字面量类型与枚举.html">
+            
+                <a href="2.3-字面量类型与枚举.html">
+            
+                    
+                    2.3 字面量类型与枚举
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="3.1-从Callback到Promise.html">
+            
+                <a href="3.1-从Callback到Promise.html">
+            
+                    
+                    3.1 从 Callback 到 Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="3.2-Async_Await深度解析.html">
+            
+                <a href="3.2-Async_Await深度解析.html">
+            
+                    
+                    3.2 Async/Await 深度解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第二部分：类型体操 —— 掌握 TS 的核心魔法</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="4.1-泛型基础.html">
+            
+                <a href="4.1-泛型基础.html">
+            
+                    
+                    4.1 泛型基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="4.2-泛型约束.html">
+            
+                <a href="4.2-泛型约束.html">
+            
+                    
+                    4.2 泛型约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="5.1-映射类型.html">
+            
+                <a href="5.1-映射类型.html">
+            
+                    
+                    5.1 映射类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="5.2-条件类型.html">
+            
+                <a href="5.2-条件类型.html">
+            
+                    
+                    5.2 条件类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="5.3-infer关键字.html">
+            
+                <a href="5.3-infer关键字.html">
+            
+                    
+                    5.3 infer 关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第三部分：后端开发实战 (Node.js/NestJS)</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="6.1-Node.js_vs_Deno_vs_Bun.html">
+            
+                <a href="6.1-Node.js_vs_Deno_vs_Bun.html">
+            
+                    
+                    6.1 Node.js vs Deno vs Bun
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="6.2-模块系统：ESM_vs_CJS.html">
+            
+                <a href="6.2-模块系统：ESM_vs_CJS.html">
+            
+                    
+                    6.2 模块系统：ESM vs CJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="7.1-依赖注入.html">
+            
+                <a href="7.1-依赖注入.html">
+            
+                    
+                    7.1 依赖注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="7.2-DTO与数据验证.html">
+            
+                <a href="7.2-DTO与数据验证.html">
+            
+                    
+                    7.2 DTO 与数据验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="7.3-ORM选型.html">
+            
+                <a href="7.3-ORM选型.html">
+            
+                    
+                    7.3 ORM 选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第四部分：前端开发实战 (React + Next.js)</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="8.1-JSX本质.html">
+            
+                <a href="8.1-JSX本质.html">
+            
+                    
+                    8.1 JSX 本质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="8.2-Hooks革命.html">
+            
+                <a href="8.2-Hooks革命.html">
+            
+                    
+                    8.2 Hooks 革命
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="9.1-服务端渲染与静态生成.html">
+            
+                <a href="9.1-服务端渲染与静态生成.html">
+            
+                    
+                    9.1 服务端渲染与静态生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="9.2-Server_Actions.html">
+            
+                <a href="9.2-Server_Actions.html">
+            
+                    
+                    9.2 Server Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第五部分：架构与工程化</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="10.1-Monorepo管理.html">
+            
+                <a href="10.1-Monorepo管理.html">
+            
+                    
+                    10.1 Monorepo 管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="10.2-类型共享策略.html">
+            
+                <a href="10.2-类型共享策略.html">
+            
+                    
+                    10.2 类型共享策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="11.1-构建工具链.html">
+            
+                <a href="11.1-构建工具链.html">
+            
+                    
+                    11.1 构建工具链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="11.2-单元测试.html">
+            
+                <a href="11.2-单元测试.html">
+            
+                    
+                    11.2 单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">附录</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="附录-速查表.html">
+            
+                <a href="附录-速查表.html">
+            
+                    
+                    速查表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            本书使用 HonKit 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.2 联合类型与交叉类型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="22-联合类型与交叉类型-union--intersection">2.2 联合类型与交叉类型 (Union &amp; Intersection)</h1>
+<p>这是 TypeScript 相比 Golang 最具杀伤力的特性之一，也是 Python 3.10+ 开始大力补全的功能。</p>
+<h2 id="1-联合类型-union-types-">1. 联合类型 (Union Types) <code>|</code></h2>
+<p><strong>场景</strong>：一个变量可能是字符串，也可能是数字。</p>
+<h3 id="思维映射">[思维映射]</h3>
+<ul>
+<li><strong>Python</strong>: <code>Union[str, int]</code> 或 <code>str | int</code> (3.10+)。</li>
+<li><strong>Golang</strong>: 痛苦。通常需要定义 <code>interface{}</code> 然后进行 Type Assertion (类型断言)，或者使用 Go 1.18+ 的泛型约束。</li>
+<li><strong>TypeScript</strong>: 原生支持 <code>|</code>。</li>
+</ul>
+<p><strong>TypeScript:</strong></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">padLeft</span>(<span class="hljs-params"><span class="hljs-attr">value</span>: <span class="hljs-built_in">string</span>, <span class="hljs-attr">padding</span>: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span></span>) {
+    <span class="hljs-comment">// 此时 padding 是 string | number</span>
+    <span class="hljs-comment">// TS 会强制你处理两种情况（类型收窄 Type Narrowing）</span>
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> padding === <span class="hljs-string">"number"</span>) {
+        <span class="hljs-comment">// 在这个 if 块里，TS 智能地知道 padding 是 number</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">" "</span>.<span class="hljs-title function_">repeat</span>(padding) + value;
+    }
+    <span class="hljs-comment">// 这里 TS 知道 padding 只能是 string</span>
+    <span class="hljs-keyword">return</span> padding + value;
+}
+</code></pre>
+<p><strong>对比 Golang 的痛苦写法:</strong></p>
+<pre><code class="lang-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">padLeft</span><span class="hljs-params">(value <span class="hljs-type">string</span>, padding <span class="hljs-keyword">interface</span>{})</span></span> {
+    <span class="hljs-keyword">switch</span> v := padding.(<span class="hljs-keyword">type</span>) {
+    <span class="hljs-keyword">case</span> <span class="hljs-type">int</span>:
+        <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-type">string</span>:
+        <span class="hljs-comment">// ...</span>
+    }
+}
+</code></pre>
+<p>TS 的优势在于：<strong>控制流分析 (Control Flow Analysis)</strong>。它能根据 <code>if/switch</code> 自动推断剩余代码的类型。</p>
+<h2 id="2-交叉类型-intersection-types-">2. 交叉类型 (Intersection Types) <code>&amp;</code></h2>
+<p><strong>场景</strong>：把两个对象合并成一个新对象（拥有两者的所有属性）。</p>
+<h3 id="思维映射-结构体组合">[思维映射] 结构体组合</h3>
+<ul>
+<li><strong>Golang</strong>: Struct Embedding (结构体嵌入)。</li>
+<li><strong>Python</strong>: 多重继承 (Multiple Inheritance)。</li>
+<li><strong>TypeScript</strong>: <code>&amp;</code> 运算符。</li>
+</ul>
+<p><strong>TypeScript:</strong></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">ErrorHandling</span> {
+    <span class="hljs-attr">success</span>: <span class="hljs-built_in">boolean</span>;
+    <span class="hljs-attr">error</span>?: <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">ArtData</span> {
+    <span class="hljs-attr">artworks</span>: <span class="hljs-built_in">string</span>[];
+}
+
+<span class="hljs-comment">// 组合成一个新类型 Response</span>
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">ArtResponse</span> = <span class="hljs-title class_">ArtData</span> &amp; <span class="hljs-title class_">ErrorHandling</span>;
+
+<span class="hljs-keyword">const</span> <span class="hljs-attr">resp</span>: <span class="hljs-title class_">ArtResponse</span> = {
+    <span class="hljs-attr">artworks</span>: [<span class="hljs-string">"Mona Lisa"</span>],
+    <span class="hljs-attr">success</span>: <span class="hljs-literal">true</span>
+};
+</code></pre>
+<p><strong>Golang 等效:</strong></p>
+<pre><code class="lang-go"><span class="hljs-keyword">type</span> ArtResponse <span class="hljs-keyword">struct</span> {
+    ArtData
+    ErrorHandling
+}
+</code></pre>
+<h2 id="3-总结">3. 总结</h2>
+<ul>
+<li><code>|</code> (Union) 是 <strong>OR</strong> 逻辑：是 A 或者 B。这是处理“多态”参数的神器。</li>
+<li><code>&amp;</code> (Intersection) 是 <strong>AND</strong> 逻辑：既是 A 又是 B。这是组合对象的神器。</li>
+</ul>
+<p>学会使用 <code>|</code> 替代 <code>any</code>，是迈向 TS 高级开发者的第一步。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2.1-结构化类型.html" class="navigation navigation-prev " aria-label="Previous page: 2.1 结构化类型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2.3-字面量类型与枚举.html" class="navigation navigation-next " aria-label="Next page: 2.3 字面量类型与枚举">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.2 联合类型与交叉类型","level":"2.5","depth":1,"next":{"title":"2.3 字面量类型与枚举","level":"2.6","depth":1,"path":"book/2.3-字面量类型与枚举.md","ref":"book/2.3-字面量类型与枚举.md","articles":[]},"previous":{"title":"2.1 结构化类型","level":"2.4","depth":1,"path":"book/2.1-结构化类型.md","ref":"book/2.1-结构化类型.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TypeScript 进化论","language":"zh-hans","gitbook":"*"},"file":{"path":"book/2.2-联合类型与交叉类型.md","mtime":"2026-02-03T19:31:50.401Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-02-03T19:31:55.078Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
