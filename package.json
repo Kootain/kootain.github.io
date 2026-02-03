@@ -1,0 +1,23 @@
+{
+  "name": "pygo2js-book",
+  "version": "1.0.0",
+  "description": "TypeScript 进化论：从 Python/Go 到全栈架构师",
+  "main": "index.js",
+  "scripts": {
+    "start": "honkit serve",
+    "build": "honkit build",
+    "deploy": "honkit build && gh-pages -d _book"
+  },
+  "keywords": [
+    "typescript",
+    "python",
+    "go",
+    "book"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "honkit": "^6.0.0"
+  }
+}
